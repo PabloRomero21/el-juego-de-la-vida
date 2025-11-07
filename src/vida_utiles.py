@@ -83,5 +83,9 @@ def calcular_siguiente_generacion(tablero):
     Devuelve:
         Una nueva lista de listas que representa el tablero en la siguiente generación.
     """
-    # TODO: Ejercicio 5
-    pass
+    res = crear_tablero(len(tablero),len(tablero[0]))
+    for fila in len(tablero):
+        for columna in len(tablero[0]):
+            vecinos = contar_vecinos(tablero,fila,columna)
+    
+
