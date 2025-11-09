@@ -84,8 +84,17 @@ def calcular_siguiente_generacion(tablero):
         Una nueva lista de listas que representa el tablero en la siguiente generación.
     """
     res = crear_tablero(len(tablero),len(tablero[0]))
-    for fila in len(tablero):
-        for columna in len(tablero[0]):
+    for fila in range(len(tablero)):
+        for columna in range(len(tablero[0])):
             vecinos = contar_vecinos(tablero,fila,columna)
+            if (2 <= vecinos <= 3) and (tablero[fila][columna]):
+                res[fila][columna] = True
+            elif (vecinos == 3):
+                res[fila][columna] = True
+            else:
+                res[fila][columna] = False
+
+    return res
+
     
 
